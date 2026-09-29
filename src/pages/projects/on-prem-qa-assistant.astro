@@ -1,0 +1,63 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+---
+
+<BaseLayout title="On-prem QA Assistant · 진행 중" description="민감한 업무 자료를 내부 환경에서 다루기 위한 QA Assistant 검토 범위와 현재 상태">
+  <Header />
+  <main id="main" class="detail-page">
+    <header class="detail-hero">
+      <div class="shell detail-hero-inner">
+        <div>
+          <a class="back-link" href="/#projects">← QA Projects</a>
+          <p class="eyebrow">PROJECT 03 · IN PROGRESS</p>
+          <h1>On-prem QA Assistant</h1>
+          <p>내부 환경에서 사용할 수 있는지 검증 중입니다.</p>
+        </div>
+        <dl class="detail-meta">
+          <div><dt>상태</dt><dd>진행 중</dd></div>
+          <div><dt>문제</dt><dd>민감한 업무 자료의 외부 전송 제약</dd></div>
+          <div><dt>결과</dt><dd>아직 판단 전</dd></div>
+        </dl>
+      </div>
+    </header>
+
+    <div class="shell case-study">
+      <nav class="case-index" aria-label="진행 범위 목차">
+        <span>진행 범위</span>
+        <ol>
+          <li><a href="#reason">검토 이유</a></li>
+          <li><a href="#scope">확인할 범위</a></li>
+          <li><a href="#status">현재 상태</a></li>
+        </ol>
+      </nav>
+
+      <article class="case-content">
+        <section id="reason" class="case-section lead-section">
+          <p class="section-number">01 · 검토 이유</p>
+          <h2>실제 업무 명세를 외부 서비스에 입력하기 어렵습니다.</h2>
+          <p>PASS AI Bot에서는 TC 초안과 정보 탐색을 보조하는 흐름을 다뤘습니다. 다음 단계에서는 민감한 자료를 내부 환경에서 처리하면서도 QA 업무에 쓸 수 있을지 확인하고 있습니다.</p>
+          <p><a class="text-link" href="/projects/pass-ai-bot/">PASS AI Bot 사용 사례 보기 →</a></p>
+        </section>
+
+        <section id="scope" class="case-section validation-section">
+          <p class="section-number">02 · 확인할 범위</p>
+          <h2>기능 구현보다 실제 사용 가능성을 판단합니다.</h2>
+          <ol class="validation-flow compact-flow">
+            <li><b>01</b><div><strong>업무 범위</strong><p>어떤 QA 작업을 내부 환경에서 보조할지 범위를 정합니다.</p></div></li>
+            <li><b>02</b><div><strong>실패 흐름</strong><p>답변을 얻지 못하거나 처리가 중단될 때 사용자가 상태를 알 수 있는지 확인합니다.</p></div></li>
+            <li><b>03</b><div><strong>판단 기준</strong><p>실무에 적용할 수 있는지를 검증 기준에 따라 결정할 예정입니다.</p></div></li>
+          </ol>
+        </section>
+
+        <section id="status" class="case-section">
+          <p class="section-number">03 · 현재 상태</p>
+          <h2>검증 결과가 확보되기 전에는 성과를 표시하지 않습니다.</h2>
+          <p>현재는 범위와 실패 조건, 검증 기준을 다듬는 단계입니다. 실제 업무 적용 결과나 성능 수치는 아직 확인되지 않아 이 페이지에 넣지 않았습니다.</p>
+        </section>
+      </article>
+    </div>
+  </main>
+  <Footer />
+</BaseLayout>

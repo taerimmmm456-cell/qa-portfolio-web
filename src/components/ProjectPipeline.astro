@@ -3,8 +3,8 @@ import { projects } from '../content/portfolio';
 import ProjectCard from './ProjectCard.astro';
 
 const connectors = [
-  { label: '남은 문제', text: 'TC · 문서화 · 탐색' },
-  { label: '새로운 제약', text: '민감정보의 Cloud LLM 활용 한계' },
+  { label: '다음 과제', text: 'TC 초안 작성과 자료 탐색' },
+  { label: '현재 검토', text: '민감정보를 다루는 내부 환경' },
 ];
 ---
 
@@ -12,10 +12,10 @@ const connectors = [
   <div class="shell">
     <div class="section-heading pipeline-heading">
       <div>
-        <p class="eyebrow">Project Pipeline</p>
-        <h2 id="projects-title">다음 프로젝트는 남은 문제에서 시작됩니다</h2>
+        <p class="eyebrow">QA PROJECTS</p>
+        <h2 id="projects-title">QA 업무에서 만든 도구와 검증</h2>
       </div>
-      <p>기술의 변화보다, 해결되지 않은 QA 문제와 새롭게 드러난 제약의 연결을 보여줍니다.</p>
+      <p>반복 검증은 자동화하고, TC 준비는 보조 도구로 다뤘습니다. 내부 환경 적용은 검증 중입니다.</p>
     </div>
     <div class="pipeline-grid">
       {projects.map((project, index) => (
