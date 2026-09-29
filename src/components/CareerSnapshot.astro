@@ -1,5 +1,13 @@
 ---
 import { qaCoverage, qaDomains } from '../content/portfolio';
+
+const careerTimeline = [
+  { company: '헥토큐앤엠', period: '2026.06–현재', role: 'QA 선임', domain: 'Fintech / Auth Platform' },
+  { company: '비단팝팝', period: '2025.12–2026.04', role: 'QA 대리', domain: 'E-Commerce' },
+  { company: '파우게임즈', period: '2024.01–2025.04', role: 'QA 사원', domain: 'Game' },
+  { company: '큐로드', period: '2022.05–2023.09', role: 'QA 사원', domain: 'Game / HW·SW Integration' },
+  { company: '아이피시', period: '2021.04–2022.05', role: 'QA 사원', domain: 'Game' },
+];
 ---
 
 <section class="section career" id="career" aria-labelledby="career-title">
@@ -21,6 +29,18 @@ import { qaCoverage, qaDomains } from '../content/portfolio';
           {qaCoverage.map((item) => <li>{item}</li>)}
         </ol>
       </article>
+    </div>
+    <div class="career-timeline" aria-labelledby="career-timeline-title">
+      <h3 id="career-timeline-title">Career Timeline</h3>
+      <ol>
+        {careerTimeline.map((item) => (
+          <li>
+            <strong>{item.company}</strong>
+            <span>{item.period} · {item.role}</span>
+            <span>{item.domain}</span>
+          </li>
+        ))}
+      </ol>
     </div>
     <div class="career-judgment">
       <span>요구사항 검토 사례</span>
