@@ -1,0 +1,26 @@
+---
+import { qaCoverage, qaDomains } from '../content/portfolio';
+---
+
+<section class="section career" id="career" aria-labelledby="career-title">
+  <div class="shell">
+    <div class="section-heading">
+      <p class="eyebrow">Career Snapshot</p>
+      <h2 id="career-title">실제 QA 기반과 도메인 경험</h2>
+    </div>
+    <div class="career-grid">
+      <article class="career-panel">
+        <h3>QA Domains</h3>
+        <ul class="domain-list" role="list">
+          {qaDomains.map((domain) => <li>{domain}</li>)}
+        </ul>
+      </article>
+      <article class="career-panel coverage-panel">
+        <h3>QA Coverage</h3>
+        <ol class="coverage-flow">
+          {qaCoverage.map((item) => <li>{item}</li>)}
+        </ol>
+      </article>
+    </div>
+  </div>
+</section>

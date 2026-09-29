@@ -1,0 +1,29 @@
+---
+import { evidence } from '../content/portfolio';
+---
+
+<section class="section evidence" id="evidence" aria-labelledby="evidence-title">
+  <div class="shell">
+    <div class="section-heading evidence-heading">
+      <div>
+        <p class="eyebrow">QA Evidence Preview</p>
+        <h2 id="evidence-title">프로젝트 바깥의 QA 기본기</h2>
+      </div>
+      <p>메인에서는 핵심 근거만 먼저 보여주고, 상세 자료와 원본 Evidence는 다음 단계에서 연결합니다.</p>
+    </div>
+    <div class="evidence-grid">
+      {evidence.map((item) => (
+        <article class="evidence-card">
+          <span class="evidence-number">EVIDENCE {item.number}</span>
+          <h3>{item.title}</h3>
+          <p>{item.message}</p>
+          <ul class="keyword-list" role="list">
+            {item.keywords.map((keyword) => <li>{keyword}</li>)}
+          </ul>
+          <span class="text-link disabled" aria-disabled="true">View Evidence →</span>
+          <small>Detail Evidence · Placeholder</small>
+        </article>
+      ))}
+    </div>
+  </div>
+</section>

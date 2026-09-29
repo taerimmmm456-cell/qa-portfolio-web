@@ -1,0 +1,35 @@
+---
+import { projects } from '../content/portfolio';
+import ProjectCard from './ProjectCard.astro';
+
+const connectors = [
+  { label: '남은 문제', text: 'TC 작성 · 문서화 · 정보 탐색' },
+  { label: '새로운 제약', text: '실제 업무 정보의 Cloud LLM 활용 한계' },
+];
+---
+
+<section class="section pipeline" id="projects" aria-labelledby="projects-title">
+  <div class="shell">
+    <div class="section-heading pipeline-heading">
+      <div>
+        <p class="eyebrow">Project Pipeline</p>
+        <h2 id="projects-title">다음 프로젝트는 남은 문제에서 시작됩니다</h2>
+      </div>
+      <p>기술의 변화보다, 해결되지 않은 QA 문제와 새롭게 드러난 제약의 연결을 보여줍니다.</p>
+    </div>
+    <div class="pipeline-grid">
+      {projects.map((project, index) => (
+        <>
+          <ProjectCard project={project} />
+          {index < connectors.length && (
+            <div class="connector" aria-label={`${connectors[index].label}: ${connectors[index].text}`}>
+              <span>{connectors[index].label}</span>
+              <strong>{connectors[index].text}</strong>
+              <i aria-hidden="true"></i>
+            </div>
+          )}
+        </>
+      ))}
+    </div>
+  </div>
+</section>

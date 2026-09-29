@@ -1,0 +1,22 @@
+---
+interface Props {
+  home?: boolean;
+}
+const { home = false } = Astro.props;
+const base = home ? '' : '/';
+---
+
+<header class="site-header">
+  <div class="shell header-inner">
+    <a class="identity" href="/" aria-label="TAERIM KIM QA Engineer 홈">
+      <strong>TAERIM KIM</strong>
+      <span>QA Engineer</span>
+    </a>
+    <nav aria-label="주요 탐색">
+      <a href={`${base}#projects`}>Projects</a>
+      <a href={`${base}#evidence`}>QA Evidence</a>
+      <a href={`${base}#career`}>Career</a>
+      <span class="nav-disabled" aria-disabled="true" title="PoC 범위 외">Work Samples</span>
+    </nav>
+  </div>
+</header>

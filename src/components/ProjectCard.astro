@@ -1,0 +1,40 @@
+---
+import type { Project } from '../content/portfolio';
+
+interface Props {
+  project: Project;
+}
+const { project } = Astro.props;
+---
+
+<article class="project-card">
+  <div class="project-topline">
+    <span class="project-number">PROJECT {project.number}</span>
+    <span class:list={['status', { progress: project.status === 'In Progress' }]}>{project.status}</span>
+  </div>
+  <h3>{project.name}</h3>
+  <dl class="project-details">
+    <div>
+      <dt>Problem</dt>
+      <dd>{project.problem}</dd>
+    </div>
+    <div>
+      <dt>What I Changed</dt>
+      <dd>{project.change}</dd>
+    </div>
+    <div>
+      <dt>My Role</dt>
+      <dd class="role-list">{project.roles.join(' · ')}</dd>
+    </div>
+  </dl>
+  <div class="project-footer">
+    <ul class="tech-list" aria-label="Technology" role="list">
+      {project.technology.map((item) => <li>{item}</li>)}
+    </ul>
+    {project.href ? (
+      <a class="text-link" href={project.href}>{project.cta}</a>
+    ) : (
+      <span class="text-link disabled" aria-disabled="true">{project.cta}</span>
+    )}
+  </div>
+</article>
