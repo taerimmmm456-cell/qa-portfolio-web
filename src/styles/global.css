@@ -111,6 +111,7 @@ ul, ol { margin-top: 0; }
 .keyword-list li { padding: .4rem .65rem; background: var(--accent-bg); color: var(--accent-soft); font-size: .78rem; }
 .evidence-card small { display: block; margin-top: .65rem; color: var(--faint); }
 .evidence-status { display: inline-block; color: var(--faint); font-size: .82rem; font-weight: 600; }
+.evidence-more { margin: 1.5rem 0 0; text-align: right; }
 
 .site-footer { padding: 3.5rem 0; }
 .footer-inner { display: flex; justify-content: space-between; align-items: flex-start; gap: 2rem; }
@@ -199,7 +200,7 @@ ul, ol { margin-top: 0; }
   .site-header { position: static; }
   .header-inner { min-height: 72px; }
   .site-header nav { gap: .9rem; }
-  .site-header nav a:nth-child(3), .site-header .nav-disabled { display: none; }
+  .site-header nav a:nth-child(n+3) { display: none; }
   .hero-inner { min-height: 0; padding: 4.3rem 0 3.5rem; grid-template-columns: 1fr; gap: 3rem; }
   .hero h1 { font-size: clamp(2.65rem, 13vw, 4rem); }
   .hero-support { font-size: 1rem; }
@@ -245,6 +246,7 @@ ul, ol { margin-top: 0; }
   .identity strong { font-size: .82rem; }
   .identity span { font-size: .72rem; }
   .site-header nav { font-size: .8rem; }
+  .hero h1 { font-size: 2.3rem; word-break: keep-all; }
   .hero-actions { display: grid; grid-template-columns: 1fr; }
   .button { width: 100%; }
   .project-topline { align-items: flex-start; }

@@ -33,6 +33,7 @@ export const projects: Project[] = [
     roles: ['Problem Definition', 'Use Flow', 'Prompt / Output Requirements', 'QA / Validation'],
     technology: ['Telegram Bot', 'LLM API', 'Excel Output'],
     cta: 'Case Study →',
+    href: '/projects/pass-ai-bot/',
   },
   {
     number: '03',
@@ -58,9 +59,10 @@ export const evidence = [
   {
     number: '02',
     title: 'Game QA',
-    message: '게임 QA의 시스템 연동과 상태·예외 검증 사례는 자료를 정리 중입니다.',
+    message: '공유 스킬 모듈의 영향 범위 판단과 스쿼드 편성의 상태·예외 검증 사례',
     keywords: ['System Interaction', 'State / Exception', 'Risk-based Testing'],
-    cta: 'Evidence Preparing',
+    href: '/evidence/game-qa/',
+    cta: 'View Case →',
   },
 ];
 
