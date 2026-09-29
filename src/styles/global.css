@@ -177,6 +177,11 @@ ul, ol { margin-top: 0; }
 .evidence-preview-card h3 { margin: .8rem 0 .65rem; font-size: 1.12rem; }
 .evidence-preview-card p { margin: .4rem 0 0; color: var(--copy); font-size: .88rem; line-height: 1.6; }
 .evidence-preview-card p strong { color: var(--accent-soft); }
+.source-file-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: .8rem; margin: 2rem 0; }
+.source-file { min-width: 0; padding: 1.5rem; border: 1px solid var(--line); background: var(--surface); }
+.source-file > span { color: var(--accent-soft); font-size: .7rem; font-weight: 700; letter-spacing: .08em; }
+.source-file h3 { margin: .8rem 0 .65rem; font-size: 1.12rem; }
+.source-file p { margin: .4rem 0 1.2rem; color: var(--copy); font-size: .88rem; line-height: 1.6; }
 .evidence-sequence { margin-top: 1.1rem; padding: .9rem 1rem; border: 1px solid var(--line); background: var(--accent-bg); color: var(--copy-strong); font-size: .84rem; line-height: 1.7; overflow-wrap: anywhere; }
 .evidence-sequence b { padding: 0 .25rem; color: var(--accent-soft); }
 .original-evidence-note { margin-top: 1.5rem; padding-top: 1.25rem; border-top: 1px solid var(--line); }
@@ -207,7 +212,7 @@ ul, ol { margin-top: 0; }
   .hero-index ol { display: grid; grid-template-columns: 1fr 1fr; }
   .section { padding: 4.5rem 0; }
   .section-heading { margin-bottom: 2.2rem; }
-  .career-grid, .career-judgment, .evidence-grid, .pipeline-heading, .evidence-heading, .detail-hero-inner, .role-boundary, .metric-comparison, .result-list, .evidence-preview-grid { grid-template-columns: 1fr; }
+  .career-grid, .career-judgment, .evidence-grid, .pipeline-heading, .evidence-heading, .detail-hero-inner, .role-boundary, .metric-comparison, .result-list, .evidence-preview-grid, .source-file-grid { grid-template-columns: 1fr; }
   .career-judgment { gap: .55rem; }
   .career-judgment a { white-space: normal; }
   .career-panel + .career-panel { border-left: 0; border-top: 1px solid var(--line); }
