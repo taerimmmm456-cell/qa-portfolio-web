@@ -22,6 +22,12 @@ const { project } = Astro.props;
       <dt>{project.status === 'In Progress' ? '현재 검토' : '대응'}</dt>
       <dd>{project.change}</dd>
     </div>
+    {project.judgment && (
+      <div class="project-judgment">
+        <dt>QA 판단</dt>
+        <dd>{project.judgment}</dd>
+      </div>
+    )}
     {project.result && (
       <div class="project-result">
         <dt>확인된 결과</dt>
