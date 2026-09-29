@@ -10,15 +10,15 @@ import Footer from '../components/Footer.astro';
     <header class="detail-hero">
       <div class="shell detail-hero-inner">
         <div>
-          <a class="back-link" href="/">← Portfolio Home</a>
-          <p class="eyebrow">SELECTED WORK SAMPLES</p>
+          <a class="back-link" href="/">← Home</a>
+          <p class="eyebrow">WORK SAMPLES · EVIDENCE ARCHIVE</p>
           <h1>Work Samples</h1>
-          <p>QA 판단과 검증 흐름을 사례로 정리하고, 직접 확인할 수 있는 자료를 함께 제공합니다.</p>
+          <p>Project Case Study와 QA 판단 사례에 연결된 공개 원본을 파일별로 확인할 수 있습니다.</p>
         </div>
         <dl class="detail-meta">
-          <div><dt>Scope</dt><dd>Process · TC · Tool Flow</dd></div>
-          <div><dt>Format</dt><dd>발표자료 · TC · 사례</dd></div>
-          <div><dt>Reading</dt><dd>상황 · 판단 · 확인 항목</dd></div>
+          <div><dt>연결</dt><dd>Project · QA Evidence</dd></div>
+          <div><dt>형식</dt><dd>PDF · PPTX · XLSX</dd></div>
+          <div><dt>읽는 순서</dt><dd>증명 내용 · 관련 사례 · 원본</dd></div>
         </dl>
       </div>
     </header>
@@ -27,7 +27,7 @@ import Footer from '../components/Footer.astro';
       <nav class="case-index" aria-label="Work Samples 목차">
         <span>WORK SAMPLES</span>
         <ol>
-          <li><a href="#originals">공개 자료</a></li>
+          <li><a href="#originals">원본 자료</a></li>
           <li><a href="#process">QA Process</a></li>
           <li><a href="#game-tc">Game QA TC</a></li>
           <li><a href="#automation">Automation</a></li>
@@ -38,38 +38,54 @@ import Footer from '../components/Footer.astro';
       <article class="case-content">
         <section id="originals" class="case-section lead-section">
           <p class="section-number">01 · Source Files</p>
-          <h2>사례를 확인할 수 있는 자료</h2>
-          <p>QA 프로세스 자료, PASS 사용 가이드 PDF 원본과 수식을 복구한 스쿼드 TC 공개용 사본을 제공합니다.</p>
+          <h2>원본 자료 아카이브</h2>
+          <p>각 파일이 증명하는 내용과 연결된 사례를 먼저 확인한 뒤, 원본 형식으로 열거나 다운로드할 수 있습니다.</p>
           <div class="source-file-grid">
-            <article class="source-file">
+            <article class="source-file" id="source-game-process">
               <span>PPTX · GAME QA</span>
               <h3>게임 QA 프로세스 문서</h3>
-              <p>요구사항 검토, BAT, 공유 모듈 회귀 검증, QA 종료 이후의 개선 사례.</p>
-              <a class="text-link" href="/work-samples/game-qa-process.pptx" download>원본 발표자료 다운로드 →</a>
+              <dl class="source-context">
+                <div><dt>증명</dt><dd>Requirement Review · BAT · Regression · Post-mortem</dd></div>
+                <div><dt>관련</dt><dd><a href="/evidence/qa-process-career/">QA Process & Career</a> · <a href="/evidence/game-qa/">Game QA</a></dd></div>
+              </dl>
+              <a class="text-link" href="/work-samples/game-qa-process.pptx" download>PPTX 다운로드 →</a>
             </article>
-            <article class="source-file">
+            <article class="source-file" id="source-qa-collaboration">
               <span>PDF · QA COLLABORATION</span>
               <h3>소프트웨어 QA 협업 프로세스</h3>
-              <p>역할 구분부터 기획 검토, TC 설계, 결함 관리, 재검증까지의 협업 흐름.</p>
-              <a class="text-link" href="/work-samples/software-qa-collaboration-process.pdf" target="_blank" rel="noopener noreferrer">원본 PDF 보기 →</a>
+              <dl class="source-context">
+                <div><dt>증명</dt><dd>역할 구분 · 기획 검토 · 결함 관리 · 재검증 협업</dd></div>
+                <div><dt>관련</dt><dd><a href="/evidence/qa-process-career/">QA Process & Career</a></dd></div>
+              </dl>
+              <a class="text-link" href="/work-samples/software-qa-collaboration-process.pdf" target="_blank" rel="noopener noreferrer">PDF 보기 →</a>
             </article>
-            <article class="source-file source-file-wide">
+            <article class="source-file source-file-wide" id="source-squad-tc">
               <span>XLSX · GAME QA TC</span>
               <h3>니케 스쿼드 TC</h3>
-              <p>사전조건, 조작, 기대 결과, 개별 판정이 담긴 TC. 결과 요약 수식을 복구하고 빌드 식별값을 제외한 공개용 사본입니다.</p>
-              <a class="text-link" href="/work-samples/squad-test-cases-public.xlsx" download>스쿼드 TC 다운로드 →</a>
+              <dl class="source-context">
+                <div><dt>증명</dt><dd>저장 전후 상태 · 빈 편성 · 전투 연동의 개별 TC 판정</dd></div>
+                <div><dt>관련</dt><dd><a href="/evidence/game-qa/#squad">Game QA · Squad TC</a></dd></div>
+              </dl>
+              <p>결과 요약 수식을 복구하고 빌드 식별값을 제외한 공개용 사본입니다.</p>
+              <a class="text-link" href="/work-samples/squad-test-cases-public.xlsx" download>XLSX 다운로드 →</a>
             </article>
-            <article class="source-file">
+            <article class="source-file" id="source-pass-automation">
               <span>PDF · PASS AUTOMATION</span>
               <h3>PASS Automation Tool 사용 가이드</h3>
-              <p>입력과 환경 선택, 실행 결과 확인, False Positive 수정 사례를 담은 원본 가이드.</p>
-              <a class="text-link" href="/work-samples/pass-automation-tool-guide.pdf" target="_blank" rel="noopener noreferrer">원본 PDF 보기 →</a>
+              <dl class="source-context">
+                <div><dt>증명</dt><dd>반복 QA Flow · 환경 전환 · 결과 확인 · False Positive 보완</dd></div>
+                <div><dt>관련</dt><dd><a href="/projects/pass-automation-tool/">PASS Automation Tool Case Study</a></dd></div>
+              </dl>
+              <a class="text-link" href="/work-samples/pass-automation-tool-guide.pdf" target="_blank" rel="noopener noreferrer">PDF 보기 →</a>
             </article>
-            <article class="source-file">
+            <article class="source-file" id="source-pass-ai-bot">
               <span>PDF · PASS AI BOT</span>
               <h3>PASS AI Bot 사용 가이드</h3>
-              <p>요구사항 입력, TC 초안 출력, 작업 맥락 분리 흐름을 담은 원본 가이드.</p>
-              <a class="text-link" href="/work-samples/pass-ai-bot-guide.pdf" target="_blank" rel="noopener noreferrer">원본 PDF 보기 →</a>
+              <dl class="source-context">
+                <div><dt>증명</dt><dd>TC Draft · Excel Output · Context Reset · 자료 입력 검토</dd></div>
+                <div><dt>관련</dt><dd><a href="/projects/pass-ai-bot/">PASS AI Bot Case Study</a></dd></div>
+              </dl>
+              <a class="text-link" href="/work-samples/pass-ai-bot-guide.pdf" target="_blank" rel="noopener noreferrer">PDF 보기 →</a>
             </article>
           </div>
           <p><a class="text-link" href="https://github.com/taerimmmm456-cell/qa-portfolio-web/blob/main/docs/public-evidence.md" target="_blank" rel="noopener noreferrer">자료별 출처와 GitHub 열람 경로 보기 →</a></p>
@@ -80,7 +96,7 @@ import Footer from '../components/Footer.astro';
           <h2>기획 충돌을 테스트 전에 해결한 사례</h2>
           <p>기획서에서 삭제·변경된 기능이 여전히 남아 있는 부분을 찾아 QA 기준의 충돌을 확인했습니다. 기획팀에 정합성 수정을 요청한 뒤, 수정된 기준으로 테스트를 진행했습니다.</p>
           <div class="evidence-sequence">문서 충돌 발견 <b>→</b> 검증 기준 보류 <b>→</b> 기획 수정 요청 <b>→</b> QA 진행</div>
-          <p>근거: 「게임 QA 프로세스 문서」의 QA 준비 사례. <a class="text-link" href="/evidence/qa-process-career/#judgment">판단 과정 보기 →</a></p>
+          <p>근거: 「게임 QA 프로세스 문서」의 QA 준비 사례. <a class="text-link" href="/evidence/qa-process-career/#judgment">QA 판단 사례 보기 →</a></p>
         </section>
 
         <section id="game-tc" class="case-section validation-section">
@@ -88,7 +104,7 @@ import Footer from '../components/Footer.astro';
           <h2>정상 동작보다 상태 전환의 예외를 확인했습니다.</h2>
           <p>스쿼드 편성 TC는 변경 내용을 저장하지 않은 채 탭을 전환할 때 확인 팝업이 나오는지, 빈 편성을 저장하려 할 때 안내가 나오는지 확인합니다. 저장한 편성이 전투 대기 화면으로 이어지는지도 별도 항목으로 검증했습니다.</p>
           <p>근거: 공개용 스쿼드 TC의 30행(미저장 변경), 83행(빈 편성), 90행(전투 연동).</p>
-          <p class="case-links"><a class="text-link" href="/work-samples/squad-test-cases-public.xlsx" download>TC 확인 →</a><a class="text-link" href="/evidence/game-qa/#squad">판단 사례 보기 →</a></p>
+          <p class="case-links"><a class="text-link" href="/evidence/game-qa/#squad">QA 판단 사례 보기 →</a><a class="text-link" href="/work-samples/squad-test-cases-public.xlsx" download>XLSX 다운로드 →</a></p>
         </section>
 
         <section id="automation" class="case-section">
@@ -96,7 +112,7 @@ import Footer from '../components/Footer.astro';
           <h2>반복 검증 도구의 결과 오염 위험</h2>
           <p>사용 가이드에는 메뉴 선택, 입력·환경 선택, 실행, 결과 확인이 한 흐름으로 기록돼 있습니다. 이전 실행의 transaction ID가 남은 채 새 요청이 실패하면 이전 결과로 성공을 잘못 판정할 수 있어, 신규 실행 시 상태를 초기화하고 1단계 성공 후에만 다음 검증으로 진행하도록 했습니다.</p>
           <div class="evidence-sequence">잔류 상태 발견 <b>→</b> False Positive 위험 <b>→</b> 신규 실행 시 초기화 <b>→</b> 실패 조건 재검증</div>
-          <p class="case-links"><a class="text-link" href="/projects/pass-automation-tool/#validation">상세 사례 보기 →</a><a class="text-link" href="/work-samples/pass-automation-tool-guide.pdf" target="_blank" rel="noopener noreferrer">원본 가이드 보기 →</a></p>
+          <p class="case-links"><a class="text-link" href="/projects/pass-automation-tool/#validation">프로젝트 상세 보기 →</a><a class="text-link" href="/work-samples/pass-automation-tool-guide.pdf" target="_blank" rel="noopener noreferrer">PDF 보기 →</a></p>
         </section>
 
         <section id="ai-bot" class="case-section">
@@ -105,7 +121,7 @@ import Footer from '../components/Footer.astro';
           <p>가이드의 입력은 기능명·요구사항·변경 내용입니다. 출력은 사전조건과 단계별 경로를 담은 엑셀 TC 초안이며, 새 작업에서는 이전 대화의 지침이 섞이지 않도록 맥락을 초기화합니다. QA는 초안의 기대 결과와 예외 조건을 별도로 검토해야 합니다.</p>
           <div class="evidence-sequence">요구사항 입력 <b>→</b> TC 초안 출력 <b>→</b> QA 검토 <b>→</b> 다음 작업 전 맥락 초기화</div>
           <p>생성 TC의 품질이나 시간 절감은 측정 자료가 없어 성과로 표시하지 않습니다.</p>
-          <p class="case-links"><a class="text-link" href="/projects/pass-ai-bot/#flow">상세 사례 보기 →</a><a class="text-link" href="/work-samples/pass-ai-bot-guide.pdf" target="_blank" rel="noopener noreferrer">원본 가이드 보기 →</a></p>
+          <p class="case-links"><a class="text-link" href="/projects/pass-ai-bot/#flow">프로젝트 상세 보기 →</a><a class="text-link" href="/work-samples/pass-ai-bot-guide.pdf" target="_blank" rel="noopener noreferrer">PDF 보기 →</a></p>
         </section>
 
       </article>
