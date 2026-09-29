@@ -1,0 +1,94 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+---
+
+<BaseLayout title="QA Process & Career · QA Evidence" description="요구사항 리뷰, BAT, 영향 범위 검증과 Post-QA 개선으로 이어지는 대표 QA 판단 사례">
+  <Header />
+  <main id="main" class="detail-page">
+    <header class="detail-hero">
+      <div class="shell detail-hero-inner">
+        <div>
+          <a class="back-link" href="/#evidence">← QA Evidence</a>
+          <p class="eyebrow">QA EVIDENCE 01</p>
+          <h1>QA Process & Career</h1>
+          <p>QA 시작 전의 정합성 판단부터 수정 후 영향 범위 재검증까지</p>
+        </div>
+        <dl class="detail-meta">
+          <div><dt>Focus</dt><dd>QA Judgment</dd></div>
+          <div><dt>Coverage</dt><dd>Review · BAT · Regression</dd></div>
+          <div><dt>Evidence</dt><dd>Representative Cases</dd></div>
+        </dl>
+      </div>
+    </header>
+
+    <div class="shell case-study">
+      <nav class="case-index" aria-label="QA Evidence 목차">
+        <span>QA EVIDENCE</span>
+        <ol>
+          <li><a href="#context">Context</a></li>
+          <li><a href="#lifecycle">QA Lifecycle</a></li>
+          <li><a href="#judgment">Representative Judgment</a></li>
+          <li><a href="#validation">Representative Validation</a></li>
+          <li><a href="#risk">Risk-based Example</a></li>
+          <li><a href="#improvement">Post-QA Improvement</a></li>
+          <li><a href="#original">Original Evidence</a></li>
+        </ol>
+      </nav>
+
+      <article class="case-content">
+        <section id="context" class="case-section lead-section">
+          <p class="section-number">01 · Context</p>
+          <h2>QA는 테스트 실행 전부터 시작됐습니다.</h2>
+          <p>기획 문서의 정합성, 테스트 가능한 Build 상태, 기존 기능과의 연동 영향을 먼저 확인하고, 발견된 문제를 수정 후 재검증 범위까지 연결했습니다.</p>
+        </section>
+
+        <section id="lifecycle" class="case-section">
+          <p class="section-number">02 · QA Lifecycle</p>
+          <h2>검토에서 사후 개선까지 이어지는 판단 흐름</h2>
+          <ol class="validation-flow compact-flow">
+            <li><b>01</b><div><strong>Requirement Review</strong><p>삭제·변경된 기능과 문서의 잔존 내용을 비교해 검증 기준을 정리.</p></div></li>
+            <li><b>02</b><div><strong>BAT · Execution</strong><p>테스트 가능 상태를 확인하고 진입을 막는 Build 문제를 우선 공유.</p></div></li>
+            <li><b>03</b><div><strong>Risk · Regression</strong><p>공유 모듈 등 연동 영향을 기준으로 Case와 재검증 범위를 확장.</p></div></li>
+            <li><b>04</b><div><strong>Post-QA</strong><p>누락된 경험·연동 TC를 되짚어 다음 기획 리뷰의 확인 항목으로 반영.</p></div></li>
+          </ol>
+        </section>
+
+        <section id="judgment" class="case-section validation-section">
+          <p class="section-number">03 · Representative Judgment</p>
+          <h2>문서가 충돌한 상태에서 QA를 시작하지 않았습니다.</h2>
+          <p>기획서 리뷰에서 삭제·변경된 기능과 문서에 남은 내용의 충돌을 발견했습니다. 문제 항목을 기획팀에 전달하고, QA 시작 전에 문서 정합성 확보를 요청했습니다.</p>
+          <p class="case-takeaway">판단 기준 · 불명확한 명세를 그대로 테스트 기준으로 삼지 않기</p>
+        </section>
+
+        <section id="validation" class="case-section">
+          <p class="section-number">04 · Representative Validation</p>
+          <h2>BAT의 Build Crash를 테스트 불가 조건으로 다뤘습니다.</h2>
+          <p>특정 메뉴 진입 시 Build Crash를 발견했습니다. 테스트 불가 상태를 공유하고 수정 요청 후, 안정화 Build 재배포를 확인해 QA를 정상 진행했습니다.</p>
+          <div class="evidence-sequence">Build Crash 발견 <b>→</b> 테스트 불가 공유 <b>→</b> 수정·재배포 <b>→</b> QA 재개</div>
+        </section>
+
+        <section id="risk" class="case-section">
+          <p class="section-number">05 · Risk-based Example</p>
+          <h2>공유 Skill Module의 영향 범위를 따라갔습니다.</h2>
+          <p>신규 스킬과 기존 스킬이 동일한 Skill Module을 사용한다는 점에서 연동 Case를 추가했습니다. 기존 스킬에서도 동일 Issue가 재현됨을 확인했고, 수정 후 영향 범위를 다시 검증했습니다.</p>
+          <div class="evidence-sequence">공유 모듈 확인 <b>→</b> 연동 Case 추가 <b>→</b> 기존 스킬 재현 <b>→</b> 수정 후 재검증</div>
+        </section>
+
+        <section id="improvement" class="case-section">
+          <p class="section-number">06 · Post-QA Improvement</p>
+          <h2>누락된 Case를 다음 검토 기준으로 돌려보냈습니다.</h2>
+          <p>Post-mortem에서 경험 기반·연동 TC 누락을 확인했습니다. 이후 기획 리뷰 단계에서 관련 연동 요소를 더 일찍 확인하도록 검토 범위를 강화했습니다.</p>
+        </section>
+
+        <section id="original" class="case-section">
+          <p class="section-number">07 · Original Evidence</p>
+          <h2>대표 사례와 원본 자료는 구분합니다.</h2>
+          <p>이 페이지는 제공된 QA 사례의 핵심 판단만 요약했습니다. 원본 QA Process 문서와 이슈·TC의 공개 URL이 없어, 확인되지 않은 링크나 자료를 원본처럼 표시하지 않습니다.</p>
+        </section>
+      </article>
+    </div>
+  </main>
+  <Footer />
+</BaseLayout>

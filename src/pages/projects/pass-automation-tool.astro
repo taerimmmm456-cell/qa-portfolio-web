@@ -14,6 +14,10 @@ import Footer from '../../components/Footer.astro';
           <p class="eyebrow">PROJECT 01 · COMPLETED</p>
           <h1>PASS Automation Tool</h1>
           <p>반복 검증 흐름을 하나의 QA Tool로 통합한 Case Study</p>
+          <div class="detail-jumps">
+            <a href="#validation">대표 QA 판단 ↓</a>
+            <a href="#result">검증된 결과 ↓</a>
+          </div>
         </div>
         <dl class="detail-meta">
           <div><dt>Focus</dt><dd>QA Workflow</dd></div>
@@ -43,7 +47,7 @@ import Footer from '../../components/Footer.astro';
         <section id="problem" class="case-section lead-section">
           <p class="section-number">01 · Problem</p>
           <h2>반복적인 Test Page 접근과 입력 과정에 공수가 누적되었습니다.</h2>
-          <p>파라미터 입력, 환경 전환, 결과 조회가 매번 분리되어 있어 검증 그 자체보다 준비와 이동에 반복 비용이 발생했습니다.</p>
+          <p>메뉴별 파라미터 수기 입력, QA·상용 환경 전환, 결과 값 확인과 복합 인증 흐름이 분리되어 있어 검증보다 준비와 이동에 반복 비용이 발생했습니다.</p>
         </section>
 
         <section id="context" class="case-section">
@@ -59,13 +63,14 @@ import Footer from '../../components/Footer.astro';
             <div>
               <h3>Direct Judgment</h3>
               <ul>
-                <li>Problem definition</li><li>Workflow</li><li>Scope</li>
-                <li>Failure condition</li><li>QA / Validation</li><li>Improvement decision</li>
+                <li>Problem Definition</li><li>Workflow Design</li><li>Scope</li>
+                <li>Failure Conditions</li><li>QA / Validation</li><li>Improvement Decision</li>
+                <li>Real-use Hardening</li>
               </ul>
             </div>
             <div class="assisted">
               <h3>AI-assisted</h3>
-              <ul><li>Code implementation</li><li>Boilerplate</li><li>Technical draft</li></ul>
+              <ul><li>Code Implementation</li><li>Boilerplate</li><li>Technical Draft / Research</li></ul>
             </div>
           </div>
         </section>
@@ -81,46 +86,70 @@ import Footer from '../../components/Footer.astro';
         <section id="implementation" class="case-section implementation-section">
           <p class="section-number">05 · Implementation</p>
           <h2>구현은 QA 흐름을 실행 가능하게 만드는 수단으로 다뤘습니다.</h2>
-          <p>Selenium과 Python을 사용해 Test Page 접근, 입력, 환경 전환과 결과 확인에 필요한 반복 동작을 연결했습니다. 상세 코드와 화면 자료는 Evidence 영역에 연결할 수 있도록 분리했습니다.</p>
+          <p>Selenium과 Python으로 Test Page 접근, 입력, 환경 전환과 결과 확인을 연결했습니다. 구현 자체보다 실패 시 잘못된 결과를 내지 않는 검증 기준을 우선했습니다.</p>
           <ul class="tech-list" aria-label="Technology"><li>Selenium</li><li>Python</li></ul>
         </section>
 
         <section id="validation" class="case-section validation-section">
           <p class="section-number">06 · QA / Validation</p>
-          <h2>동작 여부가 아니라 실제 QA 사용 기준으로 재검증합니다.</h2>
+          <h2>이전 transaction이 새 검증을 성공으로 오염시키지 않도록 했습니다.</h2>
+          <p>자동 실행보다 False Positive 방지가 우선이라는 판단에서 transaction lifecycle을 점검했습니다.</p>
           <ol class="validation-flow">
-            <li><b>01</b><div><strong>문제 발견</strong><p>사용 흐름에서 실패하거나 반복 비용이 다시 발생하는 지점을 확인</p></div></li>
-            <li><b>02</b><div><strong>수정 판단</strong><p>영향 범위와 실패 조건을 기준으로 수정 우선순위를 결정</p></div></li>
-            <li><b>03</b><div><strong>재검증</strong><p>변경한 흐름과 연관 영역을 다시 확인</p></div></li>
-            <li><b>04</b><div><strong>실제 사용 기준 확인</strong><p>사용 피드백을 통해 QA 업무 흐름에서의 적합성을 판단</p></div></li>
+            <li><b>01</b><div><strong>발견</strong><p>이전 테스트의 transaction ID가 새 테스트에도 메모리에 남을 수 있었습니다.</p></div></li>
+            <li><b>02</b><div><strong>Risk</strong><p>새 요청이 발송되지 않아도 이전 ID로 2단계 검증이 진행되면 성공으로 잘못 판정될 수 있었습니다.</p></div></li>
+            <li><b>03</b><div><strong>Change</strong><p>신규 transaction 진입 시 관련 state와 ID를 강제로 초기화했습니다.</p></div></li>
+            <li><b>04</b><div><strong>Re-validation</strong><p>1단계 통신과 JSON 파싱이 정상 완료된 경우에만 2단계 검증이 활성화되도록 확인했습니다.</p></div></li>
           </ol>
         </section>
 
-        <section id="result" class="case-section placeholder-section">
+        <section id="result" class="case-section">
           <p class="section-number">07 · Result</p>
-          <h2>결과 Evidence 추가 예정</h2>
-          <p>임의의 성과 수치나 결과를 만들지 않고, 실제 사용 기록과 검증 자료를 연결할 영역만 준비했습니다.</p>
+          <h2>반복 실행 시간을 줄이고, 결과 판정의 무결성을 높였습니다.</h2>
+          <div class="metric-comparison" aria-label="건당 반복 검증 흐름 비교">
+            <div><span>MANUAL · BEFORE</span><strong>약 1분 30초</strong><p>폼 수기 입력 · 환경 전환</p></div>
+            <span class="metric-arrow" aria-hidden="true">→</span>
+            <div><span>AUTOMATION · AFTER</span><strong>5초 이내</strong><p>원클릭 자동 주입 · 발송</p></div>
+          </div>
+          <ul class="result-list">
+            <li><strong>반복 흐름 통합</strong><span>Test Page 이동, 파라미터 입력, 환경 전환과 결과 조회를 단일 QA Tool 흐름으로 연결했습니다.</span></li>
+            <li><strong>Real-use Hardening</strong><span>QA·상용 환경에서 확인된 지연, Native Alert와 상태 잔류 조건을 보완했습니다.</span></li>
+            <li><strong>검증 무결성</strong><span>이전 transaction 상태가 새 테스트 결과에 사용되지 않도록 격리해 False Positive 위험을 차단했습니다.</span></li>
+          </ul>
         </section>
 
-        <section id="retrospective" class="case-section placeholder-section">
+        <section id="retrospective" class="case-section">
           <p class="section-number">08 · Retrospective</p>
-          <h2>회고 내용 추가 예정</h2>
-          <p>실제 사용 피드백과 개선 판단 근거를 확인한 뒤 보강할 영역입니다.</p>
+          <h2>정상 실행만으로는 실무에서 안정적으로 쓸 수 없었습니다.</h2>
+          <p>처음에는 반복 입력과 실행 공수를 줄이는 데 집중했습니다. 실제 QA·상용 환경에서는 네트워크 지연, Native Alert, DOM 이벤트 차이, 상태 잔류와 보안 제약이 사용성을 좌우했습니다.</p>
+          <p>이후에는 실패 상황에서 잘못된 성공 결과를 내지 않고 원인을 확인할 수 있도록 하드닝했습니다. 자동 실행 자체보다 반복 검증을 안정적으로 재현하는 흐름이 중요했습니다.</p>
         </section>
 
         <section id="project-evidence" class="case-section">
           <p class="section-number">09 · Evidence</p>
-          <h2>요약에서 원본까지 단계적으로 연결합니다.</h2>
-          <div class="evidence-path" aria-label="Evidence 단계">
-            <div><span>01</span><strong>Main Preview</strong><p>핵심 맥락과 판단 요약</p></div>
-            <div><span>02</span><strong>Detail Evidence</strong><p>화면 · 검증 과정 추가 예정</p></div>
-            <div><span>03</span><strong>Original Evidence</strong><p>원본 자료 연결 예정</p></div>
+          <h2>반복 흐름과 실패 조건을 대표 사례로 확인합니다.</h2>
+          <div class="evidence-preview-grid">
+            <article class="evidence-preview-card">
+              <span>EVIDENCE 01 · TOOL WORKFLOW</span>
+              <h3>수기 검증 흐름의 통합</h3>
+              <p>GUI에서 메뉴를 선택하고 사용자·파라미터를 입력한 뒤, 실행과 결과 확인까지 한 흐름으로 이어집니다.</p>
+              <div class="evidence-sequence">메뉴 선택 <b>→</b> 입력·환경 선택 <b>→</b> 실행·결과 확인</div>
+            </article>
+            <article class="evidence-preview-card">
+              <span>EVIDENCE 02 · REAL-USE HARDENING</span>
+              <h3>False Positive 위험 차단</h3>
+              <p><strong>Before</strong> 이전 transaction ID 잔류 시 새 요청 없이 2단계 검증이 진행될 위험.</p>
+              <p><strong>After</strong> 신규 진입 시 state·ID 초기화, 1단계 통신·JSON 파싱 성공 후에만 2단계 활성화.</p>
+            </article>
+            <article class="evidence-preview-card">
+              <span>EVIDENCE 03 · TROUBLESHOOTING</span>
+              <h3>Alert와 지연 시 결과 판독</h3>
+              <p>미인증 Native Alert는 전용 예외 처리로 실패 사유를 표시했습니다. 결과 조회의 고정 sleep은 실제 상태 값이 채워질 때까지의 조건부 polling으로 바꿨습니다.</p>
+            </article>
           </div>
-          <div class="evidence-placeholder">
-            <span>Evidence Screenshot</span>
-            <p>실제 자료를 넣을 이미지 영역</p>
+          <div class="original-evidence-note">
+            <h3>Original Evidence</h3>
+            <p>원본 GUI 캡처·가이드 문서의 공개 경로는 아직 제공되지 않았습니다. 검증 가능한 원본 URL이 확인되기 전에는 링크를 만들지 않습니다.</p>
           </div>
-          <span class="button secondary disabled" aria-disabled="true">View Original Evidence · Placeholder</span>
         </section>
       </article>
     </div>

@@ -9,7 +9,7 @@ import { evidence } from '../content/portfolio';
         <p class="eyebrow">QA Evidence Preview</p>
         <h2 id="evidence-title">프로젝트 바깥의 QA 기본기</h2>
       </div>
-      <p>메인에서는 핵심 근거만 먼저 보여주고, 상세 자료와 원본 Evidence는 다음 단계에서 연결합니다.</p>
+      <p>문제를 발견한 시점과 QA 판단, 수정 뒤 다시 확인한 범위를 대표 사례로 보여줍니다.</p>
     </div>
     <div class="evidence-grid">
       {evidence.map((item) => (
@@ -20,8 +20,11 @@ import { evidence } from '../content/portfolio';
           <ul class="keyword-list" role="list">
             {item.keywords.map((keyword) => <li>{keyword}</li>)}
           </ul>
-          <span class="text-link disabled" aria-disabled="true">View Evidence →</span>
-          <small>Detail Evidence · Placeholder</small>
+          {item.href ? (
+            <a class="text-link" href={item.href}>{item.cta}</a>
+          ) : (
+            <span class="evidence-status">{item.cta}</span>
+          )}
         </article>
       ))}
     </div>

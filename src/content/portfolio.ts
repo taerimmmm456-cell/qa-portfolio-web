@@ -4,6 +4,7 @@ export type Project = {
   name: string;
   problem: string;
   change: string;
+  result?: string;
   roles: string[];
   technology: string[];
   cta: string;
@@ -17,7 +18,8 @@ export const projects: Project[] = [
     name: 'PASS Automation Tool',
     problem: '반복적인 Test Page 접근과 파라미터 입력, 환경 전환에 반복 공수가 발생',
     change: '반복 검증 흐름을 하나의 QA Tool로 통합',
-    roles: ['Problem Definition', 'Workflow Design', 'QA / Validation', 'Usage Feedback'],
+    result: '건당 약 1분 30초 → 5초 이내',
+    roles: ['Problem Definition', 'Workflow Design', 'QA / Validation', 'Real-use Hardening'],
     technology: ['Selenium', 'Python'],
     cta: 'Case Study →',
     href: '/projects/pass-automation-tool/',
@@ -28,7 +30,7 @@ export const projects: Project[] = [
     name: 'PASS AI Bot',
     problem: 'TC 작성, 문서화, 정보 탐색 같은 사전 작업 공수가 남아 있음',
     change: 'Telegram에서 QA 질문, TC 초안 생성, 문서/정보 탐색을 지원하는 QA Assistant 구성',
-    roles: ['Problem Definition', 'Use Flow', 'Prompt / Output Requirements', 'QA / Validation', 'Usage Feedback'],
+    roles: ['Problem Definition', 'Use Flow', 'Prompt / Output Requirements', 'QA / Validation'],
     technology: ['Telegram Bot', 'LLM API', 'Excel Output'],
     cta: 'Case Study →',
   },
@@ -48,14 +50,17 @@ export const evidence = [
   {
     number: '01',
     title: 'QA Process & Career',
-    message: '요구사항 리뷰부터 결과 보고와 사후관리까지 실제 QA lifecycle에서 수행한 판단과 개선 사례',
-    keywords: ['Requirement Review', 'BAT', 'Defect / Regression', 'Live QA'],
+    message: '기획 문서의 충돌을 QA 전에 확인하고, BAT Crash와 스킬 연동 영향을 검증한 사례',
+    keywords: ['Requirement Review', 'BAT', 'Risk-based Testing'],
+    href: '/evidence/qa-process-career/',
+    cta: 'View Case →',
   },
   {
     number: '02',
     title: 'Game QA',
-    message: '게임 경험을 시스템 분석 → 리스크 → TC → 실제 수행 결과로 전환한 Evidence',
+    message: '게임 QA의 시스템 연동과 상태·예외 검증 사례는 자료를 정리 중입니다.',
     keywords: ['System Interaction', 'State / Exception', 'Risk-based Testing'],
+    cta: 'Evidence Preparing',
   },
 ];
 

@@ -22,6 +22,12 @@ const { project } = Astro.props;
       <dt>What I Changed</dt>
       <dd>{project.change}</dd>
     </div>
+    {project.result && (
+      <div class="project-result">
+        <dt>Verified Result</dt>
+        <dd>{project.result}</dd>
+      </div>
+    )}
     <div>
       <dt>My Role</dt>
       <dd class="role-list">{project.roles.join(' · ')}</dd>
