@@ -1,6 +1,6 @@
 # QA Portfolio 공개 근거 노트
 
-이 문서는 외부 검수자가 사이트의 사례 설명과 공개 자료를 연결할 수 있도록 작성한 텍스트 노트입니다. PASS 사용 가이드의 원본 복제본은 아니며, 내부 접근 정보·화면 캡처·실거래 정보는 포함하지 않습니다.
+이 문서는 외부 검수자가 사이트의 사례 설명과 공개 자료를 연결할 수 있도록 작성한 텍스트 노트입니다. PASS 사용 가이드 PDF 원본은 아래 링크에서 별도로 열람할 수 있습니다.
 
 ## Game QA
 
@@ -10,7 +10,7 @@
 
 ## PASS Automation Tool
 
-근거 자료: 「PASS Automation Tool 사용 가이드」 1~2쪽의 반복 입력·환경 선택·실행 흐름, 8쪽의 False Positive 위험 및 수정 내용, 9쪽의 건당 소요 시간 비교.
+근거 자료: [「PASS Automation Tool 사용 가이드」 PDF](https://qa-portfolio-web.vercel.app/work-samples/pass-automation-tool-guide.pdf) ([GitHub](https://github.com/taerimmmm456-cell/qa-portfolio-web/blob/main/public/work-samples/pass-automation-tool-guide.pdf)) 1~2쪽의 반복 입력·환경 선택·실행 흐름, 8쪽의 False Positive 위험 및 수정 내용, 9쪽의 건당 소요 시간 비교.
 
 1. 메뉴 선택 후 필요한 입력과 환경을 설정하고 실행·결과 확인까지 진행합니다.
 2. 이전 테스트의 transaction ID가 메모리에 남으면 새 요청이 실패해도 이전 결과로 성공을 잘못 판정할 위험이 있었습니다.
@@ -21,7 +21,7 @@
 
 ## PASS AI Bot
 
-근거 자료: 「PASS AI Bot 사용 가이드」 1~3쪽의 도입 배경, TC 초안 엑셀 출력, 대화 맥락 관리 기능.
+근거 자료: [「PASS AI Bot 사용 가이드」 PDF](https://qa-portfolio-web.vercel.app/work-samples/pass-ai-bot-guide.pdf) ([GitHub](https://github.com/taerimmmm456-cell/qa-portfolio-web/blob/main/public/work-samples/pass-ai-bot-guide.pdf)) 1~3쪽의 도입 배경, TC 초안 엑셀 출력, 대화 맥락 관리 기능.
 
 1. 기능명, 요구사항 또는 변경 내용을 입력합니다.
 2. 가이드는 사전조건과 단계별 테스트 경로를 포함한 TC 초안을 XLSX로 출력하는 흐름을 설명합니다.
