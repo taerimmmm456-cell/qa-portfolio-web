@@ -39,7 +39,7 @@ import Footer from '../components/Footer.astro';
         <section id="originals" class="case-section lead-section">
           <p class="section-number">01 · Source Files</p>
           <h2>원본 자료 아카이브</h2>
-          <p>각 파일이 증명하는 내용과 연결된 사례를 먼저 확인한 뒤, 원본 형식으로 열거나 다운로드할 수 있습니다.</p>
+          <p>문서 충돌 판단의 출처는 「게임 QA 프로세스 문서」의 QA 준비 사례입니다. 스쿼드 상태·예외 판정은 「니케 스쿼드 TC」의 30행(미저장 변경), 83행(빈 편성), 90행(전투 연동)에 연결됩니다.</p>
           <div class="source-file-grid">
             <article class="source-file" id="source-game-process">
               <span>PPTX · GAME QA</span>
@@ -82,7 +82,7 @@ import Footer from '../components/Footer.astro';
               <span>PDF · PASS AI BOT</span>
               <h3>PASS AI Bot 사용 가이드</h3>
               <dl class="source-context">
-                <div><dt>증명</dt><dd>TC Draft · Context Control · Local QA Helper · QA Knowledge / Checklist</dd></div>
+                <div><dt>증명</dt><dd>TC Draft · Excel Output · Context Control · File / Image Input</dd></div>
                 <div><dt>관련</dt><dd><a href="/projects/pass-ai-bot/">PASS AI Bot Case Study</a></dd></div>
               </dl>
               <p>PDF는 TC·맥락 관리의 기존 원본입니다. Local QA Helper는 최신 가이드 MD를 기준으로 관련 사례에서 설명합니다.</p>
@@ -95,23 +95,23 @@ import Footer from '../components/Footer.astro';
         <section id="process" class="case-section">
           <p class="section-number">02 · QA Process</p>
           <h2>기획 충돌을 테스트 전에 해결한 사례</h2>
-          <p>기획서에서 삭제·변경된 기능이 여전히 남아 있는 부분을 찾아 QA 기준의 충돌을 확인했습니다. 기획팀에 정합성 수정을 요청한 뒤, 수정된 기준으로 테스트를 진행했습니다.</p>
+          <p>삭제·변경된 기능이 기획서에 남아 있어 테스트 기준이 충돌했습니다. 기획팀에 정합성 수정을 요청하고, 수정된 기준으로 테스트를 진행했습니다.</p>
           <div class="evidence-sequence">문서 충돌 발견 <b>→</b> 검증 기준 보류 <b>→</b> 기획 수정 요청 <b>→</b> QA 진행</div>
-          <p>근거: 「게임 QA 프로세스 문서」의 QA 준비 사례. <a class="text-link" href="/evidence/qa-process-career/#judgment">QA 판단 사례 보기 →</a></p>
+          <p><a class="text-link" href="/evidence/qa-process-career/#judgment">QA 판단 사례 보기 →</a></p>
         </section>
 
         <section id="game-tc" class="case-section validation-section">
           <p class="section-number">03 · Game QA TC</p>
           <h2>정상 동작뿐 아니라 상태 전환의 예외도 확인했습니다.</h2>
-          <p>스쿼드 편성 TC는 변경 내용을 저장하지 않은 채 탭을 전환할 때 확인 팝업이 나오는지, 빈 편성을 저장하려 할 때 안내가 나오는지 확인합니다. 저장한 편성이 전투 대기 화면으로 이어지는지도 별도 항목으로 검증했습니다.</p>
-          <p>근거: 공개용 스쿼드 TC의 30행(미저장 변경), 83행(빈 편성), 90행(전투 연동).</p>
+          <p>미저장 편성에서 탭을 전환할 때 저장 확인 팝업이 표시되는지, 빈 편성을 저장하려 할 때 안내가 표시되는지 검증했습니다. 저장한 편성이 전투 대기 화면에 적용되는 연동 경로도 별도로 검증했습니다.</p>
+          <p>저장 전환·빈 편성·전투 연동을 각각 독립된 조건으로 판정했습니다.</p>
           <p class="case-links"><a class="text-link" href="/evidence/game-qa/#squad">QA 판단 사례 보기 →</a><a class="text-link" href="/work-samples/squad-test-cases-public.xlsx" download>XLSX 다운로드 →</a></p>
         </section>
 
         <section id="automation" class="case-section">
           <p class="section-number">04 · PASS Automation</p>
           <h2>잔류 상태로 인한 잘못된 성공 판정 위험</h2>
-          <p>사용 가이드에는 메뉴 선택, 입력·환경 선택, 실행, 결과 확인이 한 흐름으로 기록돼 있습니다. 이전 실행의 transaction ID가 남은 채 새 요청이 실패하면 이전 결과로 성공을 잘못 판정할 수 있어, 신규 실행 시 상태를 초기화하고 1단계 성공 후에만 다음 검증으로 진행하도록 했습니다.</p>
+          <p>메뉴 선택, 입력·환경 선택, 실행·결과 확인을 하나의 도구로 연결했습니다. 이전 transaction ID가 남은 채 새 요청이 실패하면 이전 결과로 성공을 잘못 판정할 수 있어, 신규 실행 시 상태를 초기화하고 1단계 성공 후에만 다음 검증을 허용했습니다.</p>
           <div class="evidence-sequence">잔류 상태 발견 <b>→</b> False Positive 위험 <b>→</b> 신규 실행 시 초기화 <b>→</b> 실패 조건 재검증</div>
           <p class="case-links"><a class="text-link" href="/projects/pass-automation-tool/#validation">프로젝트 상세 보기 →</a><a class="text-link" href="/work-samples/pass-automation-tool-guide.pdf" target="_blank" rel="noopener noreferrer">PDF 보기 →</a></p>
         </section>
@@ -119,9 +119,9 @@ import Footer from '../components/Footer.astro';
         <section id="ai-bot" class="case-section">
           <p class="section-number">05 · PASS AI Bot</p>
           <h2>TC 초안 출력과 작업 맥락 분리</h2>
-          <p>가이드의 입력은 기능명·요구사항·변경 내용입니다. 출력은 사전조건과 단계별 경로를 담은 엑셀 TC 초안이며, 새 작업에서는 이전 대화의 지침이 섞이지 않도록 맥락을 초기화합니다. QA는 초안의 기대 결과와 예외 조건을 별도로 검토해야 합니다.</p>
+          <p>기능명·요구사항·변경 내용을 입력하면 사전조건과 단계별 경로를 담은 엑셀 TC 초안을 출력합니다. 새 작업에서는 이전 대화의 지침이 섞이지 않도록 맥락을 초기화하며, QA가 초안의 기대 결과와 예외 조건을 검토합니다.</p>
           <div class="evidence-sequence">요구사항 입력 <b>→</b> TC 초안 출력 <b>→</b> QA 검토 <b>→</b> 다음 작업 전 맥락 초기화</div>
-          <p>생성 TC의 품질이나 시간 절감은 측정 자료가 없어 성과로 표시하지 않습니다.</p>
+          <p>TC 품질과 준비 시간의 개선 효과는 별도 측정이 필요합니다.</p>
           <p class="case-links"><a class="text-link" href="/projects/pass-ai-bot/#flow">프로젝트 상세 보기 →</a><a class="text-link" href="/work-samples/pass-ai-bot-guide.pdf" target="_blank" rel="noopener noreferrer">PDF 보기 →</a></p>
         </section>
 

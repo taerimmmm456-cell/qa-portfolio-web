@@ -39,17 +39,17 @@ import Footer from '../../components/Footer.astro';
         <section id="context" class="case-section lead-section">
           <p class="section-number">01 · Context</p>
           <h2>공유 Skill Module을 확인해 기존 스킬까지 검증했습니다.</h2>
-          <p>모바일 MMORPG QA 프로세스 자료는 시스템이 서로 연동되는 특성을 강조합니다. 신규 콘텐츠 검증 중 기존 기능과 공유하는 요소를 찾으면 회귀 범위를 함께 넓혀야 합니다.</p>
+          <p>신규 스킬과 기존 스킬이 같은 모듈을 사용하고 있어, 신규 기능의 결함이 기존 플레이에도 영향을 줄 수 있었습니다. 공유 모듈을 기준으로 기존 스킬까지 회귀 검증 범위를 넓혔습니다.</p>
         </section>
 
         <section id="module" class="case-section validation-section">
           <p class="section-number">02 · Shared Module</p>
           <h2>신규 스킬 이슈를 기존 스킬에서도 재현했습니다.</h2>
           <ol class="validation-flow compact-flow">
-            <li><b>01</b><div><strong>발견</strong><p>신규 스킬이 기존 스킬과 같은 모듈을 사용한다는 점을 확인했습니다.</p></div></li>
+            <li><b>01</b><div><strong>발견</strong><p>신규 스킬과 기존 스킬이 동일한 모듈을 사용하고 있었습니다.</p></div></li>
             <li><b>02</b><div><strong>Risk</strong><p>신규 스킬에서 발생한 문제가 기존 스킬에도 영향을 줄 수 있었습니다.</p></div></li>
             <li><b>03</b><div><strong>Change</strong><p>연동 Case를 보강하고 기존 스킬까지 검증 범위를 확장했습니다.</p></div></li>
-            <li><b>04</b><div><strong>Re-validation</strong><p>기존 스킬에서도 같은 이슈가 재현됨을 확인해 개발팀에 공유했고, 자료에는 수정 후 재검증한 것으로 기록돼 있습니다.</p></div></li>
+            <li><b>04</b><div><strong>Re-validation</strong><p>기존 스킬에서도 같은 이슈를 재현해 개발팀에 공유하고, 수정 후 영향 범위를 다시 검증했습니다.</p></div></li>
           </ol>
           <p class="case-takeaway">결과 · 신규 기능의 결함을 공유 모듈 영향 범위로 연결해 라이브 이전에 확인</p>
         </section>
@@ -57,38 +57,38 @@ import Footer from '../../components/Footer.astro';
         <section id="squad" class="case-section">
           <p class="section-number">03 · Squad TC</p>
           <h2>스쿼드 편성은 저장 전후 상태와 예외 경로를 <span class="headline-phrase">함께 봤습니다.</span></h2>
-          <p>스쿼드 TC에는 사전조건, 조작, 기대 결과, 개별 Result가 기록돼 있습니다. 아래는 상태 변화가 있는 실제 항목을 요약한 것입니다.</p>
+          <p>스쿼드 편성의 미저장 변경, 빈 편성 저장, 전투 대기 연동을 분리해 사전조건·조작·기대 결과를 정하고 개별 판정을 수행했습니다.</p>
           <div class="evidence-preview-grid">
             <article class="evidence-preview-card">
               <span>TC · UNSAVED CHANGE</span>
               <h3>변경 후 프리셋 전환</h3>
-              <p>현재 탭의 편성을 바꾸고 다른 탭을 선택하면 저장 확인 팝업이 나오는지 확인했습니다. 해당 개별 항목은 Pass로 기록돼 있습니다.</p>
+              <p>편성을 변경한 뒤 다른 탭으로 이동할 때 저장 확인 팝업이 표시되는 경로를 검증했습니다. 개별 판정: Pass.</p>
             </article>
             <article class="evidence-preview-card">
               <span>TC · EMPTY STATE</span>
               <h3>빈 스쿼드 저장</h3>
-              <p>편성된 캐릭터를 모두 제거한 뒤 저장을 시도하면 편성 안내가 표시되는지 확인했습니다. 해당 개별 항목은 Pass로 기록돼 있습니다.</p>
+              <p>캐릭터를 모두 제거한 뒤 저장을 시도할 때 편성 안내가 표시되는 경로를 검증했습니다. 개별 판정: Pass.</p>
             </article>
             <article class="evidence-preview-card">
               <span>TC · SYSTEM LINK</span>
               <h3>저장한 편성의 전투 연동</h3>
-              <p>저장된 스쿼드가 캠페인 전투 대기 화면에도 적용되는지 확인하는 항목입니다. 해당 개별 항목은 Pass로 기록돼 있습니다.</p>
+              <p>저장한 스쿼드가 캠페인 전투 대기 화면에도 적용되는 연동 경로를 검증했습니다. 개별 판정: Pass.</p>
             </article>
           </div>
-          <p class="case-takeaway">공개용 TC의 30행, 83행, 90행에서 각각 저장 전환, 빈 편성, 전투 연동을 확인할 수 있습니다.</p>
+          <p class="case-takeaway">판정 범위 · 저장 전환, 빈 편성, 전투 연동의 개별 TC</p>
           <p><a class="text-link" href="/work-samples/squad-test-cases-public.xlsx" download>XLSX 다운로드 →</a></p>
         </section>
 
         <section id="analysis" class="case-section">
           <p class="section-number">04 · Risk Analysis</p>
-          <h2>게임 분석서의 테스트 포인트는 실행 <span class="headline-phrase">결과와 구분합니다.</span></h2>
-          <p>별도 게임 분석서는 전투 상태 전환, 보상 지급, 계정 연동 등을 우선 검토할 위험으로 분류하고 테스트 시나리오를 제안합니다. 이는 테스트 설계 자료이며, 각 시나리오를 실행해 결함을 발견했다는 의미는 아닙니다.</p>
+          <h2>우선 검토할 위험은 실행 <span class="headline-phrase">결과와 구분합니다.</span></h2>
+          <p>전투 상태 전환, 보상 지급, 계정 연동을 우선 검토 대상으로 분류하고 테스트 시나리오를 설계했습니다. 각 시나리오의 실행 결과와 결함 발견 여부는 별도 검증이 필요합니다.</p>
         </section>
 
         <section id="sources" class="case-section">
           <p class="section-number">05 · 자료 출처</p>
           <h2>공유 모듈 검증 사례의 원본</h2>
-          <p>공유 모듈 사례는 「게임 QA 프로세스 문서」의 QA 진행 부분에 기록돼 있습니다. 상태·예외 사례는 공개용 「니케_스쿼드_TC」에서 직접 확인할 수 있습니다. 위험 분류는 별도 게임 분석서의 설계 항목을 바탕으로 요약했습니다.</p>
+          <p>공유 모듈 사례의 출처는 「게임 QA 프로세스 문서」의 QA 진행 부분입니다. 상태·예외 사례는 공개용 「니케_스쿼드_TC」의 30행(미저장 변경), 83행(빈 편성), 90행(전투 연동)이며, 각 항목의 Result는 Pass입니다. 위험 분류는 별도 게임 분석서의 설계 항목에 근거하며, 실행 결과나 발견 결함을 증명하는 자료는 아닙니다.</p>
           <p><a class="text-link" href="/work-samples/game-qa-process.pptx" download>PPTX 다운로드 →</a></p>
           <p><a class="text-link" href="/work-samples/squad-test-cases-public.xlsx" download>XLSX 다운로드 →</a></p>
           <p><a class="text-link" href="/work-samples/#source-squad-tc">원본 자료 보기 →</a></p>
