@@ -54,7 +54,7 @@ import Footer from '../../components/Footer.astro';
         <section id="helper" class="case-section">
           <p class="section-number">03 · Local QA Helper</p>
           <h2>4단계 QA 관점으로 질문과 확인 범위를 탐색합니다.</h2>
-          <p>Local QA Helper는 반복되는 QA 지식·체크리스트 탐색을 돕습니다. 아래 단계는 연차·직급·실력 등급이 아니라, 문제를 살펴볼 때 선택하는 탐색 기준입니다.</p>
+          <p>Local QA Helper는 반복되는 QA 지식·체크리스트 탐색을 돕습니다. 요구사항·기술 정보·품질 흐름·문제 원인 중 질문에 맞는 탐색 관점을 선택합니다.</p>
           <ol class="validation-flow compact-flow">
             <li><b>01</b><div><strong>Manual Tester</strong><p>요구사항 이해, 테스트 설계·수행, 결과와 결함 설명</p></div></li>
             <li><b>02</b><div><strong>Technical QA</strong><p>API, 로그, 데이터와 플랫폼 정보 확인</p></div></li>
@@ -63,13 +63,13 @@ import Footer from '../../components/Footer.astro';
           </ol>
           <p>공통 이론과 실무 판단 프레임을 구분해 탐색합니다. 실무 관점은 조직·제품·팀의 조건에 맞춰 적용합니다.</p>
           <div class="evidence-sequence">Local QA Knowledge·Checklist <b>→</b> 부족할 때 사용자가 AI 추가 분석 선택 <b>→</b> 실제 Evidence와 대조 <b>→</b> QA 최종 판단</div>
-          <p>Engineering Helper는 딥링크 점검, Native → Flutter 전환 테스트, FE / BE / Common의 1차 확인 방향을 돕습니다. 조사 시작점을 제안할 뿐, 최종 원인이나 담당 조직을 확정하지 않습니다.</p>
+          <p>Engineering Helper는 딥링크 점검, Native → Flutter 전환 테스트, FE / BE / Common의 1차 확인 방향을 제안합니다. QA는 실제 재현 결과·로그·API 응답을 대조해 원인 조사와 담당 영역 판단을 이어갑니다.</p>
         </section>
 
         <section id="risk" class="case-section">
           <p class="section-number">04 · Risk & Change</p>
           <h2>이전 작업의 맥락이 새 TC에 영향을 줄 수 있습니다.</h2>
-          <p>이전 대화의 지침이 누적되면 새 작업의 요구사항과 섞일 수 있습니다. 새 작업에서는 세션을 초기화하고 요구사항을 다시 입력해 작업 맥락을 분리합니다. 맥락 초기화만으로 생성 결과의 정확성이 보장되지는 않습니다.</p>
+          <p>이전 대화의 지침이 누적되면 새 작업의 요구사항과 섞일 수 있습니다. 새 작업에서는 세션을 초기화하고 요구사항을 다시 입력해 이전 지침의 간섭을 줄입니다. 생성된 TC는 요구사항·기대 결과·예외 조건을 기준으로 QA가 다시 검토합니다.</p>
           <div class="evidence-sequence">요구사항 입력 <b>→</b> TC 초안 생성 <b>→</b> QA 검토 <b>→</b> 새 작업 전 맥락 초기화</div>
         </section>
 
@@ -93,19 +93,19 @@ import Footer from '../../components/Footer.astro';
               <p>문서·표·이미지를 질문의 입력으로 활용합니다. 분석 결과는 실제 요구사항과 재현 결과에 대조해 QA가 판단합니다.</p>
             </article>
           </div>
-          <p class="case-takeaway">Tool 자체도 QA 대상입니다. API quota 발생 시 대체 키 전환·쿨다운을 적용하고, Atomic File Write로 저장한 맥락을 재시작 시 불러오도록 구성했습니다. 실제 장애 조건에서의 복구 안정성은 별도 검증이 필요합니다.</p>
+          <p class="case-takeaway">API quota 발생 시 대체 키 전환·쿨다운을 적용하고, Atomic File Write로 저장한 맥락을 재시작 시 불러오도록 구성했습니다.</p>
         </section>
 
         <section id="result" class="case-section">
           <p class="section-number">06 · 확인된 범위</p>
-          <h2>TC 초안과 보조 분석에는 QA 검토가 필요합니다.</h2>
-          <p>TC 엑셀 출력, 맥락 초기화, 문서·이미지 입력, Local QA Helper와 사용자 선택형 AI 분석으로 QA 준비와 탐색을 보조합니다. TC 품질·준비 시간·사용자 만족도의 개선 효과와 운영 장애 복구는 별도 검증이 필요합니다.</p>
+          <h2>TC 초안과 보조 분석을 요구사항·재현 결과에 대조합니다.</h2>
+          <p>TC 엑셀 출력, 맥락 초기화, 문서·이미지 입력, Local QA Helper와 사용자 선택형 AI 분석으로 QA 준비와 탐색을 보조합니다. QA는 초안의 사전조건·기대 결과·예외 조건을 실제 요구사항과 대조하고, 분석 결과를 재현 결과·로그·API 응답으로 검토합니다.</p>
         </section>
 
         <section id="evidence" class="case-section">
           <p class="section-number">07 · 자료 출처</p>
           <h2>공개 원본과 최신 범위를 구분합니다.</h2>
-          <p>공개 PDF는 TC 초안·엑셀 출력, 맥락 관리, 문서·표·이미지 입력과 안정성 설계의 근거입니다. Local QA Helper의 4단계 QA 관점, 사용자 선택형 AI 분석과 Engineering Helper의 출처는 최신 사용 가이드 MD의 5장입니다. 실무 관점은 작성자의 개인 판단 프레임입니다. 공개 PDF에는 이 최신 범위가 포함되지 않습니다. TC 품질 향상률, 시간 절감, 사용자 만족도와 운영 장애 재검증 성과를 뒷받침하는 측정 자료는 아직 확보되지 않았습니다.</p>
+          <p>공개 PDF의 범위는 TC 초안·엑셀 출력, 맥락 관리, 문서·표·이미지 입력과 안정성 설계입니다. Local QA Helper의 4단계 QA 관점, 사용자 선택형 AI 분석과 Engineering Helper의 출처는 최신 사용 가이드 MD의 5장입니다. 실무 관점은 작성자의 개인 판단 프레임입니다. TC 품질·준비 시간·사용자 만족도의 측정값과 운영 장애 복구의 재검증 기록은 공개 근거 범위에 포함하지 않습니다.</p>
           <p class="case-links"><a class="text-link" href="/work-samples/pass-ai-bot-guide.pdf" target="_blank" rel="noopener noreferrer">PDF 보기 →</a><a class="text-link" href="/work-samples/#source-pass-ai-bot">원본 자료 보기 →</a></p>
         </section>
       </article>

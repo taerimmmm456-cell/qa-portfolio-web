@@ -24,12 +24,12 @@
 근거 자료: [「PASS AI Bot 사용 가이드」 PDF](https://qa-portfolio-web.vercel.app/work-samples/pass-ai-bot-guide.pdf) ([GitHub](https://github.com/taerimmmm456-cell/qa-portfolio-web/blob/main/public/work-samples/pass-ai-bot-guide.pdf)) 1~3쪽의 도입 배경, TC 초안 엑셀 출력, 대화 맥락 관리 기능.
 
 1. 기능명, 요구사항 또는 변경 내용을 입력합니다.
-2. 가이드는 사전조건과 단계별 테스트 경로를 포함한 TC 초안을 XLSX로 출력하는 흐름을 설명합니다.
-3. 새 작업 전 이전 대화의 맥락을 초기화하는 기능을 안내합니다. 이는 작업 간 지침 간섭을 줄이기 위한 운영 방식입니다.
-4. 출력 파일의 형식과 TC의 검증 적합성은 별개입니다. QA가 기대 결과와 예외 조건을 검토해야 합니다.
+2. 사전조건과 단계별 테스트 경로를 포함한 TC 초안을 XLSX로 출력합니다.
+3. 새 작업 전 이전 대화의 맥락을 초기화해 작업 간 지침 간섭을 줄입니다.
+4. QA는 생성된 TC의 기대 결과와 예외 조건을 실제 요구사항에 대조해 검토합니다.
 
-가이드만으로 생성 TC의 품질, 시간 절감, 사용자 피드백은 확인할 수 없어 성과 수치로 제시하지 않습니다. 상세 내용: [PASS AI Bot Case Study](https://qa-portfolio-web.vercel.app/projects/pass-ai-bot/#flow).
+공개 근거 범위는 기능·사용 흐름·안정성 설계입니다. TC 품질·준비 시간·사용자 만족도의 측정값과 운영 장애 복구의 재검증 기록은 포함하지 않습니다. 상세 내용: [PASS AI Bot Case Study](https://qa-portfolio-web.vercel.app/projects/pass-ai-bot/#flow).
 
-최신 범위는 제공된 `PASS_AI_Bot_사용_가이드.md` 5장(QA Helper와 실무 질문 활용 가이드)을 기준으로 대조했습니다. Manual Tester / Technical QA / Quality Pipeline / Quality Problem Solver는 연차나 직급이 아닌 탐색 기준입니다. 공통 이론과 작성자의 실무 관점을 구분하며, Local 답변이 부족할 때 사용자가 AI 추가 분석을 선택합니다. Engineering Helper는 딥링크, Native → Flutter 전환, FE / BE / Common의 조사 시작 방향을 안내할 뿐 최종 원인이나 담당 조직을 확정하지 않습니다. 실제 요구사항·재현 결과·로그·API 응답과 대조해 QA가 최종 판단합니다.
+최신 범위의 출처는 제공된 `PASS_AI_Bot_사용_가이드.md` 5장(QA Helper와 실무 질문 활용 가이드)입니다. Manual Tester / Technical QA / Quality Pipeline / Quality Problem Solver는 요구사항·기술 정보·품질 흐름·문제 원인을 살펴보는 탐색 기준입니다. 공통 이론과 작성자의 실무 관점을 구분하며, Local 답변이 부족할 때 사용자가 AI 추가 분석을 선택합니다. Engineering Helper는 딥링크, Native → Flutter 전환, FE / BE / Common의 조사 시작 방향을 제안합니다. QA는 실제 요구사항·재현 결과·로그·API 응답을 대조해 원인 조사와 담당 영역 판단을 이어갑니다.
 
 현재 공개 PDF에는 이 최신 QA Helper 범위가 포함되지 않습니다. PDF의 가이드 본문은 유지하고 하단 하위 페이지 링크만 제거했으며, 위 PDF를 최신 기능의 근거로 제시하지 않습니다. 최신 MD는 내용 대조에만 사용했고 별도 원본 파일로 게시하지 않았습니다. 최신 MD에서도 하단 하위 페이지 안내를 제거했습니다.
