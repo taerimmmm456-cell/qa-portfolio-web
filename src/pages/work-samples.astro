@@ -102,7 +102,7 @@ import Footer from '../components/Footer.astro';
 
         <section id="game-tc" class="case-section validation-section">
           <p class="section-number">03 · Game QA TC</p>
-          <h2>정상 동작보다 상태 전환의 예외를 확인했습니다.</h2>
+          <h2>정상 동작뿐 아니라 상태 전환의 예외도 확인했습니다.</h2>
           <p>스쿼드 편성 TC는 변경 내용을 저장하지 않은 채 탭을 전환할 때 확인 팝업이 나오는지, 빈 편성을 저장하려 할 때 안내가 나오는지 확인합니다. 저장한 편성이 전투 대기 화면으로 이어지는지도 별도 항목으로 검증했습니다.</p>
           <p>근거: 공개용 스쿼드 TC의 30행(미저장 변경), 83행(빈 편성), 90행(전투 연동).</p>
           <p class="case-links"><a class="text-link" href="/evidence/game-qa/#squad">QA 판단 사례 보기 →</a><a class="text-link" href="/work-samples/squad-test-cases-public.xlsx" download>XLSX 다운로드 →</a></p>
@@ -110,7 +110,7 @@ import Footer from '../components/Footer.astro';
 
         <section id="automation" class="case-section">
           <p class="section-number">04 · PASS Automation</p>
-          <h2>반복 검증 도구의 결과 오염 위험</h2>
+          <h2>잔류 상태로 인한 잘못된 성공 판정 위험</h2>
           <p>사용 가이드에는 메뉴 선택, 입력·환경 선택, 실행, 결과 확인이 한 흐름으로 기록돼 있습니다. 이전 실행의 transaction ID가 남은 채 새 요청이 실패하면 이전 결과로 성공을 잘못 판정할 수 있어, 신규 실행 시 상태를 초기화하고 1단계 성공 후에만 다음 검증으로 진행하도록 했습니다.</p>
           <div class="evidence-sequence">잔류 상태 발견 <b>→</b> False Positive 위험 <b>→</b> 신규 실행 시 초기화 <b>→</b> 실패 조건 재검증</div>
           <p class="case-links"><a class="text-link" href="/projects/pass-automation-tool/#validation">프로젝트 상세 보기 →</a><a class="text-link" href="/work-samples/pass-automation-tool-guide.pdf" target="_blank" rel="noopener noreferrer">PDF 보기 →</a></p>
