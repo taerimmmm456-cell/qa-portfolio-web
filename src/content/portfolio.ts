@@ -20,7 +20,7 @@ export const projects: Project[] = [
     problem: '반복적인 Test Page 접근과 파라미터 입력, 환경 전환에 반복 공수가 발생',
     change: '반복 검증 흐름을 하나의 QA Tool로 통합',
     judgment: '잔류 transaction ID를 초기화하고, 1단계 성공 후 다음 검증을 허용했습니다.',
-    result: '건당 약 1분 30초 → 5초 이내',
+    result: '건당 약 1분 30초 → 5초 이내 (Test Page 입력·환경 전환·발송 기준)',
     roles: ['반복 작업 정의', '사용 흐름 설계', '실행·결과 검증', '실사용 개선'],
     cta: '프로젝트 상세 보기 →',
     href: '/projects/pass-automation-tool/',
