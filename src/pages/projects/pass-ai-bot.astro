@@ -4,7 +4,7 @@ import Header from '../../components/Header.astro';
 import Footer from '../../components/Footer.astro';
 ---
 
-<BaseLayout title="PASS AI Bot · QA Case Study" description="TC 초안과 정보 탐색의 준비 공수를 줄이기 위해 설계한 QA Assistant 사례">
+<BaseLayout title="PASS AI Bot · QA Case Study" description="TC 초안과 Local QA Helper로 QA 준비·탐색을 지원하고 QA 판단 경계를 정한 사례">
   <Header />
   <main id="main" class="detail-page">
     <header class="detail-hero">
@@ -13,12 +13,12 @@ import Footer from '../../components/Footer.astro';
           <a class="back-link" href="/#projects">← Projects</a>
           <p class="eyebrow">PROJECT 02 · CASE STUDY</p>
           <h1>PASS AI Bot</h1>
-          <p>TC 초안의 형식과 대화 맥락을 QA 관점에서 다룬 사례</p>
+          <p>TC 초안과 QA 지식 탐색을 돕되, 최종 판단은 QA가 수행합니다.</p>
         </div>
         <dl class="detail-meta">
-          <div><dt>Focus</dt><dd>QA Preparation</dd></div>
-          <div><dt>Output</dt><dd>TC Draft · Excel</dd></div>
-          <div><dt>Evidence</dt><dd>사용 가이드에 기록된 기능 범위</dd></div>
+          <div><dt>Focus</dt><dd>QA Preparation · Knowledge</dd></div>
+          <div><dt>Output</dt><dd>TC Draft · Local QA Helper</dd></div>
+          <div><dt>Evidence</dt><dd>사용 가이드 · QA Helper 흐름</dd></div>
         </dl>
       </div>
     </header>
@@ -29,6 +29,7 @@ import Footer from '../../components/Footer.astro';
         <ol>
           <li><a href="#problem">Problem</a></li>
           <li><a href="#judgment">QA Judgment</a></li>
+          <li><a href="#helper">Local QA Helper</a></li>
           <li><a href="#risk">Risk & Change</a></li>
           <li><a href="#flow">Use Flow</a></li>
           <li><a href="#result">확인된 범위</a></li>
@@ -39,27 +40,42 @@ import Footer from '../../components/Footer.astro';
       <article class="case-content">
         <section id="problem" class="case-section lead-section">
           <p class="section-number">01 · Problem</p>
-          <h2>TC 초안을 만들고 다시 엑셀 형식으로 옮기는 과정이 반복됐습니다.</h2>
-          <p>웹 기반 대화 결과를 복사한 뒤 행과 열을 정리해야 했고, 이전 대화의 지침이 다음 작업에 섞일 수 있었습니다. QA 질문과 자료 탐색도 별도의 흐름으로 남아 있었습니다.</p>
+          <h2>TC 초안과 QA 지식 탐색이 반복 작업으로 남아 있었습니다.</h2>
+          <p>TC 결과를 엑셀 형식으로 다시 정리해야 했고, 이전 대화의 지침이 다음 작업에 섞일 수 있었습니다. QA 개념과 체크리스트, 기술 확인 방향도 매번 별도 검색이나 대화에서 찾아야 했습니다.</p>
         </section>
 
         <section id="judgment" class="case-section validation-section">
           <p class="section-number">02 · QA Judgment</p>
-          <h2>생성된 TC는 실행 전 검토가 필요한 초안으로 다뤘습니다.</h2>
-          <p>사용 가이드는 요구사항 또는 변경 내용을 입력받아 사전조건과 단계별 테스트 경로를 포함한 TC를 엑셀 파일로 출력하는 흐름을 설명합니다. 출력 형식의 편의와 테스트 적합성은 별개이므로, 기대 결과와 예외 조건은 QA가 확인해야 합니다.</p>
-          <p class="case-takeaway">검토 기준 · 요구사항과 기대 결과가 맞는지, 빠진 상태·예외가 없는지 확인</p>
+          <h2>AI가 결론을 내리는 대신 QA의 확인 범위를 넓히도록 설계했습니다.</h2>
+          <p>Local QA Knowledge와 AI 분석은 확인할 관점을 찾는 참고 자료입니다. 생성된 TC도 실행 전 검토가 필요한 초안으로 다뤘습니다. 실제 요구사항, 재현 결과, 로그와 API 응답을 대조해 기대 결과와 예외 조건을 확인합니다.</p>
+          <p class="case-takeaway">판단 경계 · 결함 원인, 출시 여부와 품질 판정은 담당 QA가 결정합니다.</p>
+        </section>
+
+        <section id="helper" class="case-section">
+          <p class="section-number">03 · Local QA Helper</p>
+          <h2>네 관점으로 QA 질문과 확인 범위를 탐색합니다.</h2>
+          <p>Local QA Helper는 반복되는 QA 지식·체크리스트 탐색을 돕습니다. 아래 단계는 연차·직급·실력 등급이 아니라, 문제를 살펴볼 때 선택하는 탐색 기준입니다.</p>
+          <ol class="validation-flow compact-flow">
+            <li><b>01</b><div><strong>Manual Tester</strong><p>요구사항 이해, 테스트 설계·수행, 결과와 결함 설명</p></div></li>
+            <li><b>02</b><div><strong>Technical QA</strong><p>API, 로그, 데이터와 플랫폼 정보 확인</p></div></li>
+            <li><b>03</b><div><strong>Quality Pipeline</strong><p>반복 검증, 자동화 후보, QA 자산, Quality Gate와 Feedback</p></div></li>
+            <li><b>04</b><div><strong>Quality Problem Solver</strong><p>영향 범위, 병목, 책임 공백, 반복 비용과 품질 문제의 원인 정의</p></div></li>
+          </ol>
+          <p>일부 주제는 공통 이론과 개인 실무 관점을 구분합니다. 실무 관점은 작성자의 판단 프레임이며, 조직·제품·팀의 조건에 맞춰 적용해야 합니다.</p>
+          <div class="evidence-sequence">Local QA Knowledge·Checklist <b>→</b> 부족할 때 사용자가 AI 추가 분석 선택 <b>→</b> 실제 Evidence와 대조 <b>→</b> QA 최종 판단</div>
+          <p>Engineering Helper는 딥링크 점검, Native → Flutter 전환 테스트, FE / BE / Common의 1차 확인 방향을 돕습니다. 조사 시작점을 제안할 뿐, 최종 원인이나 담당 조직을 확정하지 않습니다.</p>
         </section>
 
         <section id="risk" class="case-section">
-          <p class="section-number">03 · Risk & Change</p>
+          <p class="section-number">04 · Risk & Change</p>
           <h2>이전 작업의 맥락이 새 TC에 영향을 줄 수 있습니다.</h2>
           <p>가이드는 대화 맥락의 누적과 이전 지침 간섭을 위험으로 설명합니다. 새 작업을 시작할 때 세션을 초기화할 수 있는 흐름을 두고, 작업별 요구사항을 다시 입력하도록 했습니다. 이 조치는 맥락을 분리하는 운영 방식이며, 생성 결과의 정확성을 자동으로 보증하지는 않습니다.</p>
           <div class="evidence-sequence">요구사항 입력 <b>→</b> TC 초안 생성 <b>→</b> QA 검토 <b>→</b> 새 작업 전 맥락 초기화</div>
         </section>
 
         <section id="flow" class="case-section">
-          <p class="section-number">04 · Use Flow</p>
-          <h2>가이드에 기록된 QA 지원 범위</h2>
+          <p class="section-number">05 · Use Flow</p>
+          <h2>TC 초안과 작업 맥락은 분리해 다룹니다.</h2>
           <div class="evidence-preview-grid">
             <article class="evidence-preview-card">
               <span>WORK SAMPLE 01 · TC DRAFT</span>
@@ -77,18 +93,19 @@ import Footer from '../../components/Footer.astro';
               <p>가이드는 문서·표·이미지의 내용을 분석에 활용하는 기능을 설명합니다. 이 페이지는 실제 업무 자료나 분석 결과를 재현하지 않습니다.</p>
             </article>
           </div>
+          <p class="case-takeaway">Tool 자체도 QA 대상입니다. 공개 가이드는 API quota 시 대체 키 전환·쿨다운, Atomic File Write와 재시작 후 맥락 복구를 설명합니다. 이를 검증된 안정성 성과로 환산하지는 않습니다.</p>
         </section>
 
         <section id="result" class="case-section">
-          <p class="section-number">05 · 확인된 범위</p>
-          <h2>확인된 것은 기능·사용 흐름입니다.</h2>
-          <p>사용 가이드에는 TC 엑셀 출력, 세션 초기화, 자료 분석의 사용 방법이 기록돼 있습니다. 실제 TC의 품질 측정, 시간 절감 수치, 사용자 피드백, 운영 장애 재검증 기록은 이 자료만으로 확인할 수 없어 성과로 표시하지 않았습니다.</p>
+          <p class="section-number">06 · 확인된 범위</p>
+          <h2>기능 범위와 QA 판단 경계까지만 설명합니다.</h2>
+          <p>사용 가이드에서 TC 엑셀 출력, 맥락 관리, 자료 입력, Local QA Helper의 탐색 구조와 사용자 선택형 AI 분석 흐름을 확인했습니다. TC 품질 향상률, 시간 절감, 사용자 만족도와 운영 장애 재검증 성과는 확인 자료가 없어 표시하지 않았습니다.</p>
         </section>
 
         <section id="evidence" class="case-section">
-          <p class="section-number">06 · 자료 출처</p>
-          <h2>사용 가이드에서 확인한 흐름</h2>
-          <p>「PASS AI Bot 사용 가이드」에 기록된 도입 배경, 기능 범위, TC 초안 생성 흐름을 바탕으로 작업 과정을 정리했습니다.</p>
+          <p class="section-number">07 · 자료 출처</p>
+          <h2>공개 원본과 최신 범위를 구분합니다.</h2>
+          <p>공개 PDF는 TC 초안·엑셀 출력, 맥락 관리, 자료 입력과 안정성 설계의 근거입니다. Local QA Helper의 네 관점, 사용자 선택형 AI 분석과 Engineering Helper는 최신 사용 가이드 MD의 5장을 기준으로 설명했습니다. 아래 PDF는 기존 버전으로 유지합니다.</p>
           <p class="case-links"><a class="text-link" href="/work-samples/pass-ai-bot-guide.pdf" target="_blank" rel="noopener noreferrer">PDF 보기 →</a><a class="text-link" href="/work-samples/#source-pass-ai-bot">원본 자료 보기 →</a></p>
         </section>
       </article>

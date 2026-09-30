@@ -29,3 +29,7 @@
 4. 출력 파일의 형식과 TC의 검증 적합성은 별개입니다. QA가 기대 결과와 예외 조건을 검토해야 합니다.
 
 가이드만으로 생성 TC의 품질, 시간 절감, 사용자 피드백은 확인할 수 없어 성과 수치로 제시하지 않습니다. 상세 내용: [PASS AI Bot Case Study](https://qa-portfolio-web.vercel.app/projects/pass-ai-bot/#flow).
+
+최신 범위는 제공된 `PASS_AI_Bot_사용_가이드.md` 5장(QA Helper와 실무 질문 활용 가이드)을 기준으로 대조했습니다. Manual Tester / Technical QA / Quality Pipeline / Quality Problem Solver는 연차나 직급이 아닌 탐색 기준입니다. 공통 이론과 작성자의 실무 관점을 구분하며, Local 답변이 부족할 때 사용자가 AI 추가 분석을 선택합니다. Engineering Helper는 딥링크, Native → Flutter 전환, FE / BE / Common의 조사 시작 방향을 안내할 뿐 최종 원인이나 담당 조직을 확정하지 않습니다. 실제 요구사항·재현 결과·로그·API 응답과 대조해 QA가 최종 판단합니다.
+
+현재 공개 PDF에는 이 최신 QA Helper 범위가 포함되지 않습니다. 기존 PDF 원본은 교체하지 않았으며, 위 PDF를 최신 기능의 근거로 제시하지 않습니다. 최신 MD는 이번 내용 대조에만 사용했고 별도 원본 파일로 게시하지 않았습니다.

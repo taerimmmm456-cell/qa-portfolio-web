@@ -74,6 +74,8 @@ ul, ol { margin-top: 0; }
 .career-timeline ol { margin: 0; padding: 0; list-style: none; }
 .career-timeline li { display: grid; grid-template-columns: 1fr 1.25fr 1fr; align-items: center; gap: 1rem; padding: .65rem 0; border-top: 1px solid var(--line); color: var(--copy); font-size: .86rem; }
 .career-timeline strong { color: var(--text); font-size: .92rem; }
+.career-timeline .career-expansion { grid-column: 1 / -1; margin-top: -.3rem; color: var(--muted); font-size: .8rem; }
+.career-expansion b { margin-right: .7rem; color: var(--accent-soft); font-size: .72rem; }
 .career-judgment { display: grid; grid-template-columns: 180px 1fr auto; align-items: center; gap: 1.5rem; margin-top: .75rem; padding: 1.25rem 1.5rem; border: 1px solid var(--line); background: var(--surface); }
 .career-judgment span { color: var(--accent-soft); font-size: .7rem; font-weight: 700; letter-spacing: .1em; }
 .career-judgment p { margin: 0; color: var(--copy); font-size: .88rem; line-height: 1.6; }
