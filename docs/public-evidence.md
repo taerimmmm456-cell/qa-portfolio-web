@@ -10,12 +10,12 @@
 
 ## PASS Automation Tool
 
-근거 자료: [「PASS Automation Tool 사용 가이드」 PDF](https://qa-portfolio-web.vercel.app/work-samples/pass-automation-tool-guide.pdf) ([GitHub](https://github.com/taerimmmm456-cell/qa-portfolio-web/blob/main/public/work-samples/pass-automation-tool-guide.pdf)) 1~2쪽의 반복 입력·환경 선택·실행 흐름, 8쪽의 False Positive 위험 및 수정 내용, 9쪽의 건당 소요 시간 비교.
+근거 자료: [「PASS Automation Tool 사용 가이드」 PDF](https://qa-portfolio-web.vercel.app/work-samples/pass-automation-tool-guide.pdf) ([GitHub](https://github.com/taerimmmm456-cell/qa-portfolio-web/blob/main/public/work-samples/pass-automation-tool-guide.pdf)) 1~2쪽의 반복 입력·환경 선택·실행 흐름. 공개 가이드는 FAQ까지의 5쪽이며, 뒤에 포함됐던 하위 기술 보고서는 제거했습니다. 아래 False Positive 판단과 시간 비교는 기존 Case Study에 정리된 기록으로, 현재 공개 가이드에 해당 상세 기록이 포함된 것은 아닙니다.
 
 1. 메뉴 선택 후 필요한 입력과 환경을 설정하고 실행·결과 확인까지 진행합니다.
 2. 이전 테스트의 transaction ID가 메모리에 남으면 새 요청이 실패해도 이전 결과로 성공을 잘못 판정할 위험이 있었습니다.
 3. 새 실행 시 관련 상태를 초기화하고, 앞 단계의 통신과 결과 해석이 정상 완료된 경우에만 다음 검증을 허용하도록 변경했습니다.
-4. 가이드는 수기 입력·환경 전환 약 1분 30초와 원클릭 자동 주입·발송 5초 이내를 비교합니다. 이 수치는 해당 반복 흐름의 기록이며 전체 QA 생산성 지표가 아닙니다.
+4. 기존 Case Study는 수기 입력·환경 전환 약 1분 30초와 원클릭 자동 주입·발송 5초 이내를 비교합니다. 이 수치는 해당 반복 흐름의 기록이며 전체 QA 생산성 지표가 아닙니다.
 
 상세 판단 흐름: [PASS Automation Case Study](https://qa-portfolio-web.vercel.app/projects/pass-automation-tool/#validation).
 
@@ -32,4 +32,4 @@
 
 최신 범위는 제공된 `PASS_AI_Bot_사용_가이드.md` 5장(QA Helper와 실무 질문 활용 가이드)을 기준으로 대조했습니다. Manual Tester / Technical QA / Quality Pipeline / Quality Problem Solver는 연차나 직급이 아닌 탐색 기준입니다. 공통 이론과 작성자의 실무 관점을 구분하며, Local 답변이 부족할 때 사용자가 AI 추가 분석을 선택합니다. Engineering Helper는 딥링크, Native → Flutter 전환, FE / BE / Common의 조사 시작 방향을 안내할 뿐 최종 원인이나 담당 조직을 확정하지 않습니다. 실제 요구사항·재현 결과·로그·API 응답과 대조해 QA가 최종 판단합니다.
 
-현재 공개 PDF에는 이 최신 QA Helper 범위가 포함되지 않습니다. 기존 PDF 원본은 교체하지 않았으며, 위 PDF를 최신 기능의 근거로 제시하지 않습니다. 최신 MD는 이번 내용 대조에만 사용했고 별도 원본 파일로 게시하지 않았습니다.
+현재 공개 PDF에는 이 최신 QA Helper 범위가 포함되지 않습니다. PDF의 가이드 본문은 유지하고 하단 하위 페이지 링크만 제거했으며, 위 PDF를 최신 기능의 근거로 제시하지 않습니다. 최신 MD는 내용 대조에만 사용했고 별도 원본 파일로 게시하지 않았습니다. 최신 MD에서도 하단 하위 페이지 안내를 제거했습니다.
